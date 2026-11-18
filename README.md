@@ -54,6 +54,11 @@ rows for example `Cursor.fetchone()` or `Cursor.fetchmany()`. By default
 `Cursor.fetchmany()` fetches one row. Please set
 `trino.dbapi.Cursor.arraysize` accordingly.
 
+After a query returns columns, `cur.description` contains metadata for each
+result column. The `type_code` field is the Trino type name returned by the
+server, for example `"bigint"`, `"varchar(20)"`, or `"array(bigint)"`.
+It is a string, not a numeric identifier or a Python type.
+
 **Monitoring query progress**
 
 Since queries can take a while to complete, it is useful to be able to monitor

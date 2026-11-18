@@ -371,7 +371,7 @@ class DescribeOutput(NamedTuple):
 
 class ColumnDescription(NamedTuple):
     name: str
-    type_code: int
+    type_code: str
     display_size: int
     internal_size: int
     precision: int
